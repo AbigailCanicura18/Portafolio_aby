@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Dalia</title>
+    
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <a href="#home" class="logo">MiPortafolio.</a>
+        
+        <nav class="navbar">
+            <a href="#home" class="active">Inicio</a>
+            <a href="#about">Sobre Mí</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portafolio</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+
+        <div class="fas fa-bars" id="menu-icon"></div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hola, soy <span>Tu Nombre</span></h1>
+            <h3 class="text-animation">Soy <span>Desarrollador Web</span></h3>
+            <p>Aquí puedes escribir una breve bienvenida. Este es un párrafo de ejemplo para mostrar cómo se vería tu introducción en el portafolio, replicando el estilo del sitio de referencia.</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <a href="#" class="btn">Descargar CV</a>
+        </div>
+        
+        <div class="home-img">
+            <img src="https://via.placeholder.com/500x500.png?text=Tu+Foto+Aqui" alt="Tu Foto">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="https://via.placeholder.com/500x500.png?text=Sobre+Mi" alt="Sobre Mí">
+        </div>
+        
+        <div class="about-content">
+            <h2 class="heading">Sobre <span>Mí</span></h2>
+            <h3>¡Desarrollador Frontend!</h3>
+            <p>Aquí va una descripción más detallada sobre ti, tu pasión por el código, tu experiencia y las tecnologías con las que te gusta trabajar. El objetivo es que quien visite tu sitio te conozca un poco mejor profesionalmente.</p>
+            <a href="#" class="btn">Leer Más</a>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">Mis <span>Skills</span></h2>
+        
+        <div class="skills-container">
+            <div class="skills-box">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML5</h3>
+                <p>Experiencia en maquetación web semántica y moderna.</p>
+            </div>
+            
+            <div class="skills-box">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS3</h3>
+                <p>Diseño de layouts responsivos con Flexbox, Grid y animaciones.</p>
+            </div>
+            
+            <div class="skills-box">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Manejo del DOM, ES6+ y lógica de programación para interactividad.</p>
+            </div>
+            
+            <div class="skills-box">
+                <i class="fa-brands fa-react"></i>
+                <h3>React</h3>
+                <p>Creación de Single Page Applications (SPA) y componentes reutilizables.</p>
+            </div>
+
+            <div class="skills-box">
+                <i class="fa-brands fa-node-js"></i>
+                <h3>Node.js</h3>
+                <p>Desarrollo de APIs RESTful y manejo de backend básico.</p>
+            </div>
+
+            <div class="skills-box">
+                <i class="fa-brands fa-figma"></i>
+                <h3>Figma</h3>
+                <p>Diseño y prototipado de interfaces de usuario (UI/UX).</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Mi <span>Portafolio</span></h2>
+        
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="../assets/cronoDosis/prototipo.jpg" alt="CronoDosis">
+                <div class="portfolio-layer">
+                    <h4>CronoDosis</h4>
+                    <p>Descripción del proyecto CronoDosis.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            
+            <div class="portfolio-box">
+                <img src="../assets/ecoBatt/plano_ecobatt.png" alt="EcoBatt">
+                <div class="portfolio-layer">
+                    <h4>EcoBatt</h4>
+                    <p>Descripción del proyecto EcoBatt.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            
+            <div class="portfolio-box">
+                <img src="../assets/human&dog_health/mapa.png" alt="Human & Dog Health">
+                <div class="portfolio-layer">
+                    <h4>Human & Dog Health</h4>
+                    <p>Descripción del proyecto de salud.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contác<span>tame</span></h2>
+        
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Nombre Completo">
+                <input type="email" placeholder="Correo Electrónico">
+            </div>
+            <div class="input-box">
+                <input type="tel" placeholder="Número de Teléfono">
+                <input type="text" placeholder="Asunto">
+            </div>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Tu Mensaje"></textarea>
+            <input type="submit" value="Enviar Mensaje" class="btn">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 por Tu Nombre | Todos los derechos reservados.</p>
+        </div>
+        
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
