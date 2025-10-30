@@ -2,9 +2,9 @@
 
 ¡Bienvenido a mi portafolio personal! Este proyecto es una página web estática diseñada para mostrar mis habilidades, educación y los proyectos en los que he trabajado.
 
-### [Ver el sitio en vivo ](https://[TU-USUARIO-DE-GITHUB].github.io/portafolio/)
+### [Ver el sitio en vivo ](https://github.com/AbigailCanicura18/Portafolio_aby/tree/main/docs)
 
-*(Nota: Reemplaza `portafolio` por el nombre de tu repositorio si lo llamas de otra forma)*
+
 
 ---
 
