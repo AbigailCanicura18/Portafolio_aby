@@ -1,13 +1,21 @@
-/* Variables de color basadas en un esquema neutro con acentos */
+/* PALETA DE COLORES NUEVA (Azules y Grises) */
 :root {
-    --text-dark: #212529; /* Casi negro */
-    --text-muted: #6c757d; /* Gris para texto secundario */
-    --primary-light: #e0f2f7; /* Un celeste muy claro */
-    --primary-dark: #37474f; /* Gris azulado oscuro */
-    --accent-color: #6a1b9a; /* Púrpura para acentos (similar al ejemplo) */
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --accent-color: #0d6efd; /* Azul Bootstrap (profesional) */
+    --accent-color-dark: #0a58ca; /* Azul más oscuro para hover */
+    --accent-color-purple: #6a1b9a; /* Púrpura de la referencia anterior */
+    --accent-color-purple-light: #8e24aa;
+    --accent-color-purple-lightest: #ab47bc;
     --white: #ffffff;
     --light-gray: #f8f9fa;
-    --dark-gray: #343a40;
+    --dark-gray: #212529; /* Casi negro para navbar y footer */
+    --header-bg-color: #1a1a2e; /* Azul muy oscuro para portada */
+}
+
+/* HACE QUE LOS ENLACES DE ANCLA (href="#about") SE DESPLICEN SUAVEMENTE */
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -15,6 +23,8 @@ body {
     color: var(--text-dark);
     background-color: var(--white);
     line-height: 1.6;
+    /* Añade padding superior para que el navbar fijo no tape el contenido */
+    padding-top: 56px; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-heading {
     font-size: 2.5rem;
-    color: var(--primary-dark);
+    color: var(--text-dark); /* Color oscuro, no gris */
     margin-bottom: 2rem;
     text-transform: uppercase;
 }
@@ -45,66 +55,94 @@ hr.divider {
     opacity: 1;
 }
 
-/* Navbar */
+/* BORDE MORADO ANIMADO (KEYFRAMES) */
+.animated-divider {
+    max-width: 200px; /* Más ancho para que se note */
+    animation: color-change-divider 4s infinite alternate;
+}
+
+@keyframes color-change-divider {
+    0% { background-color: var(--accent-color-purple); transform: scaleX(1); }
+    50% { background-color: var(--accent-color-purple-light); transform: scaleX(0.5); }
+    100% { background-color: var(--accent-color-purple-lightest); transform: scaleX(1); }
+}
+
+
+/* BARRA DE NAVEGACIÓN (Estilo Akimi) */
 #mainNav {
-    background-color: var(--white);
+    background-color: var(--dark-gray);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-bottom: 1px solid var(--dark-gray);
     transition: all 0.3s ease-in-out;
 }
+#mainNav.navbar-scrolled {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
 #mainNav .navbar-brand {
-    color: var(--primary-dark);
+    color: var(--white);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
 }
-#mainNav .navbar-brand i {
-    color: var(--accent-color);
-}
-#mainNav .navbar-nav .nav-link {
-    color: var(--text-dark);
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
-    transition: color 0.2s ease-in-out;
-}
-#mainNav .navbar-nav .nav-link i {
-    color: var(--text-muted);
-}
-#mainNav .navbar-nav .nav-link.active,
-#mainNav .navbar-nav .nav-link:hover {
-    color: var(--accent-color);
-}
 #mainNav .navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 #mainNav .navbar-toggler:focus {
     box-shadow: none;
 }
+#mainNav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+#mainNav .navbar-nav .nav-link {
+    color: var(--white);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease-in-out;
+}
+#mainNav .navbar-nav .nav-link:hover {
+    color: var(--accent-color);
+}
+#mainNav .navbar-nav .nav-link.active {
+    color: var(--accent-color); /* Color para el enlace de la sección activa */
+}
+#mainNav .navbar-nav .nav-link i {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 8px;
+    transition: color 0.2s ease-in-out;
+}
+#mainNav .navbar-nav .nav-link:hover i,
+#mainNav .navbar-nav .nav-link.active i {
+    color: var(--accent-color);
+}
 
-/* Header (Cabecera de impacto) */
+
+/* Header (Portada) */
 .masthead {
     position: relative;
     width: 100%;
     height: 100vh;
     min-height: 500px;
-    background-color: var(--dark-gray); /* Color base si la imagen no carga */
+    background-color: var(--header-bg-color);
     overflow: hidden;
     color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
+/* IMAGEN DE FONDO (FLORES/ESTRELLAS) */
 .masthead-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/stars-bg.jpg'); /* Asegúrate de tener una imagen de fondo estrellado */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.7; /* Para que el texto sea más legible */
+    opacity: 0.3; /* Opacidad bajita para que se vea el texto */
     z-index: 0;
 }
 
@@ -117,42 +155,54 @@ hr.divider {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 3px solid var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 0 15px rgba(106, 27, 154, 0.5); /* Sombra púrpura */
+    margin-bottom: 20px;
+}
+
+/* ESTRELLA GIRATORIA (BORDE ANIMADO) */
+.spinning-border {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: 3px dashed var(--accent-color-purple); /* Borde morado */
+    border-top-color: transparent;
+    border-bottom-color: var(--accent-color-purple-lightest);
+    animation: spin 8s linear infinite; /* 8 segundos para una vuelta */
+    opacity: 0.8;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .profile-img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
-    border-radius: 50%; /* Asegura que la imagen sea circular dentro del contenedor */
-}
-
-.star-decoration {
-    font-size: 2.5rem;
-    position: absolute;
-    top: 10px; /* Ajusta según sea necesario */
-    right: 10px; /* Ajusta según sea necesario */
-    color: yellow; /* O un color que resalte */
-    animation: twinkle 1.5s infinite alternate;
-}
-
-@keyframes twinkle {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 15px rgba(106, 27, 154, 0.5); /* Sombra morada */
+    position: relative;
+    z-index: 2;
 }
 
 
-.masthead h2 {
+.masthead h1 {
     color: var(--white);
-    font-size: 2.5rem;
-    margin-top: 1.5rem;
+    font-size: 3.5rem;
+    margin-top: 0.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
@@ -163,87 +213,77 @@ hr.divider {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.masthead blockquote {
-    font-size: 1.75rem;
-    font-style: italic;
+/* Redes sociales y CV en la portada */
+.masthead .social-link {
     color: var(--white);
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    text-align: left; /* Alineado a la izquierda */
-}
-
-.masthead .japanese-quote {
-    font-size: 1.2rem;
-    display: block;
-    margin-top: 0.5rem;
-}
-
-.role-title {
-    font-size: 2rem;
-    color: var(--accent-color);
-    font-weight: 700;
-    text-align: left; /* Alineado a la izquierda */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.social-icons-header {
-    text-align: left; /* Alineado a la izquierda */
-}
-
-.social-link {
-    color: var(--white);
-    font-size: 1.8rem;
-    margin-right: 1rem;
+    font-size: 2rem; /* Más grande para que destaque */
+    margin: 0.5rem 0; /* Centrado debajo del botón */
     transition: color 0.2s ease-in-out;
     text-decoration: none;
 }
-.social-link:hover {
+.masthead .social-link:hover {
     color: var(--accent-color);
 }
 
+
 /* General Page Sections */
 .page-section {
-    padding: 8rem 0;
+    padding: 6rem 0; /* Padding estándar */
     background-color: var(--light-gray);
 }
-.page-section:nth-of-type(even) { /* Para alternar colores de sección */
-    background-color: var(--white);
+/* Alterna el color de fondo de las secciones */
+#about {
+    background-color: var(--light-gray);
 }
+#skills-education {
+    background-color: var(--white); /* Fondo blanco para esta sección */
+    padding-top: 6rem; /* Padding normal */
+}
+#experience {
+    background-color: var(--light-gray);
+    padding-top: 0; /* Sin padding superior, ya que el banner lo da */
+}
+#contact {
+    background-color: var(--white); /* Fondo blanco para esta sección */
+    padding-top: 0;
+}
+
 
 /* About Section */
 .about-text {
-    font-size: 1.15rem;
+    font-size: 1.1rem; /* Un poco más pequeño y limpio */
     line-height: 1.8;
+    color: var(--text-muted); /* Color de texto más suave */
 }
 
-/* Skills & Education Section */
-.skill-item {
-    margin-bottom: 1.5rem;
+/* Skills & Education Section (NUEVO ESTILO LISTA) */
+.skill-category {
+    background-color: var(--light-gray);
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+}
+.skill-list {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin: 0;
 }
 
-.skill-name {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+/* HABILIDADES INTERPERSONALES */
+.soft-skill-item {
+    background-color: var(--white) !important; /* Fondo blanco */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    border-radius: 0.25rem;
     color: var(--text-dark);
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.soft-skill-item:last-child {
+    border-bottom: 1px solid #e0e0e0 !important; /* Mantener el borde para todos */
 }
 
-.progress {
-    height: 10px;
-    background-color: #e9ecef;
-    border-radius: 5px;
-}
-
-.progress-bar {
-    background-color: var(--accent-color); /* Color por defecto, se puede sobrescribir con bg-clases de Bootstrap */
-    border-radius: 5px;
-    font-size: 0.6rem;
-    line-height: 10px;
-    color: var(--white);
-    text-align: right;
-    padding-right: 5px;
-    transition: width 0.6s ease;
-}
 
 .education-item {
     padding: 1.5rem;
@@ -251,6 +291,7 @@ hr.divider {
     background-color: var(--white);
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
     border-radius: 0.25rem;
+    margin-bottom: 1.5rem; /* Espacio entre items de educación */
 }
 .education-item h4 {
     color: var(--primary-dark);
@@ -270,10 +311,12 @@ hr.divider {
 .project-card {
     border: none;
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* Opacidad eliminada */
 }
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efecto de levantar */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12); /* Sombra más pronunciada */
 }
 .project-card .card-img-top {
     height: 200px;
@@ -289,29 +332,48 @@ hr.divider {
 }
 
 /* Contact Section */
-#contact .form-floating>.form-control:focus~label,
-#contact .form-floating>.form-control:not(:placeholder-shown)~label,
-#contact .form-floating>.form-select~label {
-    color: var(--accent-color);
+/* Formulario eliminado, se estilizan los iconos */
+.social-icons-contact .social-link-contact {
+    color: var(--primary-dark); /* Color oscuro para los iconos */
+    font-size: 2.5rem; /* Tamaño grande */
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
 }
-#contact .form-control:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 0.25rem rgba(106, 27, 154, 0.25); /* Sombra púrpura */
+.social-icons-contact .social-link-contact:hover {
+    color: var(--accent-color); /* Color azul al pasar el mouse */
 }
 
-.btn-primary {
+
+/* Botón Primario y Botón XL */
+.btn-primary, .btn-xl {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: var(--white);
     font-weight: 700;
     padding: 0.8rem 1.8rem;
     transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
 }
-.btn-primary:hover {
-    background-color: #55167e; /* Un púrpura más oscuro */
-    border-color: #55167e;
+.btn-primary:hover, .btn-xl:hover {
+    background-color: var(--accent-color-dark);
+    border-color: var(--accent-color-dark);
     color: var(--white);
 }
+a.btn-xl {
+    padding: 0.8rem 1.8rem;
+}
+
+
+.btn-outline-dark {
+    color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+.btn-outline-dark:hover {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
 
 /* Footer */
 footer.bg-dark {
@@ -321,50 +383,175 @@ footer .text-white-50 {
     color: rgba(255, 255, 255, 0.6) !important;
 }
 
+/* ESTILOS PARA LOS ICONOS DEL FOOTER (Rúbrica) */
+.social-icons-footer .social-link-footer {
+    color: rgba(255, 255, 255, 0.6); /* Color blanco-grisáceo */
+    font-size: 1.75rem; /* Tamaño un poco más pequeño que los de contacto */
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+}
+.social-icons-footer .social-link-footer:hover {
+    color: var(--accent-color); /* Color azul al pasar el mouse */
+}
+
+
 /* Modales de Proyectos */
 .modal-title {
     color: var(--primary-dark);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
-.carousel-image-fixed, .carousel-image-vertical {
+
+/* DESCRIPCIONES DEL CARRUSEL */
+.carousel-caption {
+    position: static; /* No superpuesto */
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+.carousel-caption p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+#humanDogModal .carousel-caption {
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--light-gray);
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+
+.carousel-image-fixed {
     border-radius: 0.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16 / 9;
+    object-fit: cover; 
+    width: 100%;
 }
+
+.carousel-image-small-vertical {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 40vh;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    border-radius: 0.25rem;
+    background-color: #f1f1f1;
+}
+
+/* ESTILO PARA LOS TÍTULOS DE SECCIÓN CON IMAGEN DE FONDO (EDUCATION, EXPERIENCE, CONTACT) */
+.section-header-banner {
+    position: relative;
+    height: 300px; /* Altura aumentada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax */
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    margin: 0; /* Sin margen */
+    padding: 0;
+}
+
+.section-header-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+    z-index: 1;
+}
+
+.section-header-banner .content {
+    position: relative;
+    z-index: 2;
+}
+
+.section-header-banner h2 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.section-header-banner p.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* Ajuste específico para Contact si no hay imagen de fondo */
+#contact .section-header-banner {
+    background-image: url('assets/img/header_contact.jpeg'); /* Asegúrate de tener esta imagen */
+    background-color: var(--primary-dark); /* Fallback si la imagen no carga */
+}
+
 
 /* Media Queries para Responsividad */
 @media (max-width: 991.98px) {
+    body {
+        padding-top: 56px; /* Ajustar el padding del body al tamaño del navbar colapsado */
+    }
     .masthead {
         height: auto;
-        padding-top: 5rem;
+        padding-top: 8rem;
         padding-bottom: 5rem;
     }
-    .masthead h2 {
-        font-size: 2rem;
+    .masthead h1 {
+        font-size: 2.5rem;
     }
-    .masthead blockquote {
-        font-size: 1.4rem;
-        text-align: center;
+    .subheading-header {
+        font-size: 1.1rem;
     }
-    .masthead .role-title {
-        font-size: 1.6rem;
-        text-align: center;
+    .profile-circle-container {
+        width: 180px;
+        height: 180px;
     }
-    .social-icons-header {
-        text-align: center;
-        margin-top: 1.5rem;
+    .masthead .social-link {
+        font-size: 1.8rem;
+    }
+    .section-header-banner {
+        height: 200px;
+        background-attachment: scroll; /* Desactiva parallax en móvil */
+    }
+    .section-header-banner h2 {
+        font-size: 2.5rem;
+    }
+    .section-header-banner p.lead {
+        font-size: 1rem;
     }
 }
 
-@media (min-width: 768px) {
-    #mainNav {
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
+@media (max-width: 767.98px) {
+    .masthead h1 {
+        font-size: 2rem;
     }
-    .masthead-heading {
-        font-size: 4rem;
+    .masthead .btn-xl {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
     }
-    .masthead-subheading {
-        font-size: 1.75rem;
+    .masthead .social-link {
+        font-size: 1.5rem;
+    }
+    .section-heading {
+        font-size: 2rem;
+    }
+    .sub-section-heading {
+        font-size: 1.5rem;
+    }
+    .social-icons-contact .social-link-contact {
+        font-size: 2rem;
+    }
+    .skill-list {
+        font-size: 1rem;
+        text-align: center;
     }
 }
