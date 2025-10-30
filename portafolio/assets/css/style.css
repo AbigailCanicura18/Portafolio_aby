@@ -1,16 +1,16 @@
-/* Variables de color basadas en un esquema neutro con acentos */
+
 :root {
-    --text-dark: #212529; /* Casi negro */
-    --text-muted: #6c757d; /* Gris para texto secundario */
-    --primary-light: #e0f2f7; /* Un celeste muy claro */
-    --primary-dark: #37474f; /* Gris azulado oscuro */
-    --accent-color-1: #6a1b9a; /* Púrpura principal */
-    --accent-color-2: #8e24aa; /* Púrpura más claro */
-    --accent-color-3: #ab47bc; /* Púrpura aún más claro */
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --accent-color: #0d6efd; /* Azul Bootstrap (profesional) */
+    --accent-color-dark: #0a58ca; /* Azul más oscuro para hover */
+    --accent-color-purple: #6a1b9a; /* Púrpura de la referencia anterior */
+    --accent-color-purple-light: #8e24aa;
+    --accent-color-purple-lightest: #ab47bc;
     --white: #ffffff;
     --light-gray: #f8f9fa;
-    --dark-gray: #343a40;
-    --header-bg-color: #3e3e3e; /* Fondo oscuro de la cabecera (fallback) */
+    --dark-gray: #212529; /* Casi negro para navbar y footer */
+    --header-bg-color: #1a1a2e; /* Azul muy oscuro para portada */
 }
 
 /* HACE QUE LOS ENLACES DE ANCLA (href="#about") SE DESPLICEN SUAVEMENTE */
@@ -23,6 +23,8 @@ body {
     color: var(--text-dark);
     background-color: var(--white);
     line-height: 1.6;
+    /* Añade padding superior para que el navbar fijo no tape el contenido */
+    padding-top: 56px; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-heading {
     font-size: 2.5rem;
-    color: var(--primary-dark);
+    color: var(--text-dark); /* Color oscuro, no gris */
     margin-bottom: 2rem;
     text-transform: uppercase;
 }
@@ -48,7 +50,7 @@ hr.divider {
     height: 0.2rem;
     max-width: 3.25rem;
     margin: 1.5rem auto;
-    background-color: var(--accent-color-1);
+    background-color: var(--accent-color);
     border: 0;
     opacity: 1;
 }
@@ -60,18 +62,18 @@ hr.divider {
 }
 
 @keyframes color-change-divider {
-    0% { background-color: var(--accent-color-1); transform: scaleX(1); }
-    50% { background-color: var(--accent-color-2); transform: scaleX(0.5); }
-    100% { background-color: var(--accent-color-3); transform: scaleX(1); }
+    0% { background-color: var(--accent-color-purple); transform: scaleX(1); }
+    50% { background-color: var(--accent-color-purple-light); transform: scaleX(0.5); }
+    100% { background-color: var(--accent-color-purple-lightest); transform: scaleX(1); }
 }
 
 
-/* Navbar Superior Fija (NO Offcanvas) */
+/* BARRA DE NAVEGACIÓN (Estilo Akimi) */
 #mainNav {
-    background-color: var(--dark-gray); /* Oscuro */
+    background-color: var(--dark-gray);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-bottom: 1px solid var(--dark-gray);
     transition: all 0.3s ease-in-out;
 }
 #mainNav.navbar-scrolled {
@@ -96,12 +98,22 @@ hr.divider {
     color: var(--white);
     font-weight: 500;
     padding: 0.5rem 1rem;
+    transition: color 0.2s ease-in-out;
 }
 #mainNav .navbar-nav .nav-link:hover {
-    color: var(--accent-color-1);
+    color: var(--accent-color);
 }
 #mainNav .navbar-nav .nav-link.active {
-    color: var(--accent-color-1); /* Color para el enlace de la sección activa */
+    color: var(--accent-color); /* Color para el enlace de la sección activa */
+}
+#mainNav .navbar-nav .nav-link i {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 8px;
+    transition: color 0.2s ease-in-out;
+}
+#mainNav .navbar-nav .nav-link:hover i,
+#mainNav .navbar-nav .nav-link.active i {
+    color: var(--accent-color);
 }
 
 
@@ -118,10 +130,9 @@ hr.divider {
     align-items: center;
     justify-content: center;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    padding-top: 5rem; /* Espacio para la navbar fija */
 }
 
-/* IMAGEN DE FONDO (FLORES) */
+/* IMAGEN DE FONDO (FLORES/ESTRELLAS) */
 .masthead-bg {
     position: absolute;
     top: 0;
@@ -160,10 +171,10 @@ hr.divider {
     width: 110%;
     height: 110%;
     border-radius: 50%;
-    border: 3px dashed var(--accent-color-1);
-    border-top-color: var(--accent-color-2);
-    border-bottom-color: var(--accent-color-3);
-    animation: spin 5s linear infinite; /* 5 segundos para una vuelta */
+    border: 3px dashed var(--accent-color-purple); /* Borde morado */
+    border-top-color: transparent;
+    border-bottom-color: var(--accent-color-purple-lightest);
+    animation: spin 8s linear infinite; /* 8 segundos para una vuelta */
     opacity: 0.8;
 }
 
@@ -182,7 +193,7 @@ hr.divider {
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--white);
-    box-shadow: 0 0 15px rgba(106, 27, 154, 0.5);
+    box-shadow: 0 0 15px rgba(106, 27, 154, 0.5); /* Sombra morada */
     position: relative;
     z-index: 2;
 }
@@ -211,13 +222,13 @@ hr.divider {
     text-decoration: none;
 }
 .masthead .social-link:hover {
-    color: var(--accent-color-1);
+    color: var(--accent-color);
 }
 
 
 /* General Page Sections */
 .page-section {
-    padding: 8rem 0;
+    padding: 6rem 0; /* Padding estándar */
     background-color: var(--light-gray);
 }
 /* Alterna el color de fondo de las secciones */
@@ -226,19 +237,23 @@ hr.divider {
 }
 #skills-education {
     background-color: var(--white); /* Fondo blanco para esta sección */
+    padding-top: 6rem; /* Padding normal */
 }
 #experience {
     background-color: var(--light-gray);
+    padding-top: 0; /* Sin padding superior, ya que el banner lo da */
 }
 #contact {
     background-color: var(--white); /* Fondo blanco para esta sección */
+    padding-top: 0;
 }
 
 
 /* About Section */
 .about-text {
-    font-size: 1.15rem;
+    font-size: 1.1rem; /* Un poco más pequeño y limpio */
     line-height: 1.8;
+    color: var(--text-muted); /* Color de texto más suave */
 }
 
 /* Skills & Education Section */
@@ -262,7 +277,7 @@ hr.divider {
 }
 
 .progress-bar {
-    background-color: var(--accent-color-1);
+    background-color: var(--accent-color);
     border-radius: 5px;
     font-size: 0.6rem;
     line-height: 10px;
@@ -283,13 +298,13 @@ hr.divider {
     padding-bottom: 1rem;
 }
 .soft-skill-item:last-child {
-    border-bottom: 1px solid #e0e0e0; /* Mantener el borde para todos */
+    border-bottom: 1px solid #e0e0e0 !important; /* Mantener el borde para todos */
 }
 
 
 .education-item {
     padding: 1.5rem;
-    border-left: 4px solid var(--accent-color-1);
+    border-left: 4px solid var(--accent-color);
     background-color: var(--white);
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
     border-radius: 0.25rem;
@@ -313,10 +328,11 @@ hr.divider {
 .project-card {
     border: none;
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efecto de levantar */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12); /* Sombra más pronunciada */
 }
 .project-card .card-img-top {
     height: 200px;
@@ -335,17 +351,17 @@ hr.divider {
 #contact .form-floating>.form-control:focus~label,
 #contact .form-floating>.form-control:not(:placeholder-shown)~label,
 #contact .form-floating>.form-select~label {
-    color: var(--accent-color-1);
+    color: var(--accent-color);
 }
 #contact .form-control:focus {
-    border-color: var(--accent-color-1);
-    box-shadow: 0 0 0 0.25rem rgba(106, 27, 154, 0.25);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 /* Botón Primario y Botón XL */
 .btn-primary, .btn-xl {
-    background-color: var(--accent-color-1);
-    border-color: var(--accent-color-1);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
     color: var(--white);
     font-weight: 700;
     padding: 0.8rem 1.8rem;
@@ -354,8 +370,8 @@ hr.divider {
     display: inline-block;
 }
 .btn-primary:hover, .btn-xl:hover {
-    background-color: #55167e;
-    border-color: #55167e;
+    background-color: var(--accent-color-dark);
+    border-color: var(--accent-color-dark);
     color: var(--white);
 }
 a.btn-xl {
@@ -380,7 +396,7 @@ a.btn-xl {
     text-decoration: none;
 }
 .social-icons-contact .social-link-contact:hover {
-    color: var(--accent-color-1); /* Color morado al pasar el mouse */
+    color: var(--accent-color); /* Color azul al pasar el mouse */
 }
 
 
@@ -399,7 +415,7 @@ footer .text-white-50 {
     font-weight: 700;
 }
 
-/* DESCRIPCIONES DEL CARRUSEL (MODIFICADO) */
+/* DESCRIPCIONES DEL CARRUSEL */
 .carousel-caption {
     position: static; /* No superpuesto */
     padding-top: 1.25rem;
@@ -445,16 +461,17 @@ footer .text-white-50 {
 /* ESTILO PARA LOS TÍTULOS DE SECCIÓN CON IMAGEN DE FONDO (EDUCATION, EXPERIENCE, CONTACT) */
 .section-header-banner {
     position: relative;
-    height: 250px; /* Altura deseada */
+    height: 300px; /* Altura aumentada */
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Efecto Parallax */
     color: var(--white);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    margin-bottom: 4rem; /* Espacio debajo del banner */
-    margin-top: 4rem; /* Espacio encima del banner */
+    margin: 0; /* Sin margen */
+    padding: 0;
 }
 
 .section-header-banner .overlay {
@@ -486,13 +503,16 @@ footer .text-white-50 {
 
 /* Ajuste específico para Contact si no hay imagen de fondo */
 #contact .section-header-banner {
-    background-image: none !important; /* Desactiva la imagen de fondo si no quieres */
-    background-color: var(--primary-dark) !important; /* Usa el color oscuro en su lugar */
+    /* background-image: url('assets/img/header_contact.jpeg'); */ /* Descomenta si tienes una imagen */
+    background-color: var(--primary-dark); /* Fallback si la imagen no carga */
 }
 
 
 /* Media Queries para Responsividad */
 @media (max-width: 991.98px) {
+    body {
+        padding-top: 56px; /* Ajustar el padding del body al tamaño del navbar colapsado */
+    }
     .masthead {
         height: auto;
         padding-top: 8rem;
@@ -502,7 +522,7 @@ footer .text-white-50 {
         font-size: 2.5rem;
     }
     .subheading-header {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     .profile-circle-container {
         width: 180px;
@@ -513,6 +533,7 @@ footer .text-white-50 {
     }
     .section-header-banner {
         height: 200px;
+        background-attachment: scroll; /* Desactiva parallax en móvil */
     }
     .section-header-banner h2 {
         font-size: 2.5rem;
