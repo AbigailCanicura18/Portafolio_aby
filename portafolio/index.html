@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Abigail Caniucura</title>
+    <title>Portafolio - Abigail Caniucura</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
@@ -13,7 +17,45 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">Abigail Caniucura</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user-circle me-1"></i>About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills-education"><i class="fas fa-cogs me-1"></i>Skills & Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience"><i class="fas fa-project-diagram me-1"></i>Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead d-flex align-items-center justify-content-center">
+        <div class="masthead-bg" style="background-image: url('assets/img/estrellas.jpg');"></div>
+        <div class="container text-center text-white z-1">
+            <div class="profile-circle-container position-relative mx-auto mb-4">
+                <div class="spinning-border"></div>
+                <img class="profile-img" src="assets/img/perfilAby.jpg" alt="Abigail Caniucura">
+            </div>
+            <h1 class="mb-3">Abigail Aylin Caniucura de la Hoz</h1>
+            <p class="subheading-header mb-4">Técnico en Programación y Desarrollo de Soluciones Tecnológicas</p>
+            
+            <div class="d-flex flex-column align-items-center">
+                <a class="btn btn-primary btn-xl mb-3" href="assets/CV.pdf" download="Abigail_Caniucura_CV.pdf">
+                    <i class="fas fa-download me-2"></i>Descargar CV
+                </a>
+                <a class="social-link" href="https://github.com/tu-usuario" aria-label="GitHub"><i class="fab fa-github"></i></a>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -33,6 +75,23 @@
                 </ul>
             </div>
         </div>
+    </header>
+
+    <section class="page-section bg-light" id="about">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0 section-heading">ABOUT ME</h2>
+            <hr class="divider animated-divider">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="text-dark mb-4 about-text">
+                        Profesional en formación con sólidas bases técnicas en programación (Python, C++), bases de datos y desarrollo web/IoT. Experiencia práctica en Desarrollo de GUI (Tkinter) e integración de sistemas.
+                        Formación continua validada por pasantías y credenciales P-TECH/IBM en áreas de IA, Chatbots y Datos. Destacada capacidad de liderazgo y resolución de problemas (Troubleshooting), enfocada en la entrega de soluciones tecnológicas escalables.
+                    </p>
+                    <a class="btn btn-primary btn-xl" href="assets/CV.pdf" download="Abigail_Caniucura_CV.pdf">
+                        <i class="fas fa-download me-2"></i>Descargar CV
+                    </a>
+                </div>
+            </div>
     </nav>
 
     <header class="masthead d-flex align-items-center justify-content-center" id="page-top">
@@ -77,6 +136,52 @@
         </div>
     </section>
 
+    <section class="page-section" id="skills-education">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0 section-heading">SKILLS & EDUCATION</h2>
+            <hr class="divider">
+            
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-10">
+                    <h3 class="sub-section-heading mb-3">LANGUAGES & TECHNOLOGIES</h3>
+                    <div class="skill-category">
+                        <p class="skill-list">Python, C++, HTML5, CSS3, JavaScript (ES6), SQL, MySQL Workbench, Git, GitHub, Tkinter.</p>
+                    </div>
+
+                    <h3 class="sub-section-heading mt-5 mb-3">HABILIDADES INTERPERSONALES</h3>
+                    <div class="skill-category">
+                        <p class="skill-list">Liderazgo Estratégico, Resolución Proactiva de Problemas, Comunicación de Proyectos Complejos, Gestión de Equipos Multifuncionales.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-header-banner mt-5" style="background-image: url('assets/img/educacion.webp');">
+                <div class="overlay"></div>
+                <div class="content text-white text-center">
+                    <h2 class="mb-1">EDUCATION</h2>
+                    <p class="lead">My academic background and certifications</p>
+                </div>
+            </div>
+
+            <div class="row gx-4 gx-lg-5 justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <div class="education-item mb-4 p-4 shadow-sm rounded">
+                        <h4>Liceo Comercial Vate Vicente Huidobro</h4>
+                        <p class="text-muted mb-1">Técnico en Programación | Santiago, Chile</p>
+                        <p class="small text-muted">Septiembre 2024 – Presente</p>
+                        <ul>
+                            <li>Foco Curricular: Programación Orientada a Objetos (POO), Administración de Bases de Datos (SQL, MySQL Workbench).</li>
+                        </ul>
+                    </div>
+                    <div class="education-item mb-4 p-4 shadow-sm rounded">
+                        <h4>Credenciales y Formación Complementaria (P-TECH / IBM)</h4>
+                        <p class="text-muted mb-1">Formación Continua | Online</p>
+                        <p class="small text-muted">Completadas en 2025</p>
+                        <ul>
+                            <li>Fundamentos de los Datos, Desarrollo Web, Chatbots con IA, Elevator Pitch con IA, Esenciales de Solicitud de Empleo.</li>
+                        </ul>
+                    </div>
+                </div>
     <section class="page-section" id="skills-education">
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0 section-heading">SKILLS & EDUCATION</h2>
@@ -163,6 +268,45 @@
     </section>
 
     <section class="page-section bg-light" id="experience">
+        <div class="section-header-banner" style="background-image: url('assets/img/experiencia.jpg');">
+            <div class="overlay"></div>
+            <div class="content text-white text-center">
+                <h2 class="mb-1">EXPERIENCE</h2>
+                <p class="lead">My professional journey and key projects</p>
+            </div>
+        </div>
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center"> 
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="assets/img/cronoDosis/portadaCrono.jpg" class="card-img-top" alt="Proyecto CronoDosis">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">CronoDosis</h5>
+                            <p class="card-text text-muted flex-grow-1">Líder de Equipo y Desarrolladora Principal (IoT y Web). Desarrollo de prototipo de pastillero IoT y interfaz web.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#cronoDosisModal">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="assets/img/ecoBatt/portadaEco.jpg" class="card-img-top" alt="Proyecto EcoBatt">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">EcoBatt (Prototipo)</h5>
+                            <p class="card-text text-muted flex-grow-1">Analista de Viabilidad para reciclaje avanzado de baterías, enfocado en Economía Circular.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#ecoBattModal">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card h-100 human-dog-health-card">
+                        <img src="assets/img/human&dog_health/portadaHuman.jpg" class="card-img-top" alt="Proyecto Human & Dog Health">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Human & Dog Health (Prototipo)</h5>
+                            <p class="card-text text-muted flex-grow-1">Líder de Equipo e Investigadora Principal. Solución para mitigar enfermedades zoonóticas.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#humanDogModal">Ver Detalles</a>
+                        </div>
+                    </div>
+    <section class="page-section bg-light" id="experience">
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0 section-heading">EXPERIENCE & PROJECTS</h2>
             <hr class="divider">
@@ -227,8 +371,15 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
+    <section class="page-section" id="contact">
+        <div class="section-header-banner" style="background-image: url('assets/img/header_contact.jpeg'); background-color: var(--primary-dark);">
+            <div class="overlay"></div>
+            <div class="content text-white text-center">
+                <h2 class="mb-1">CONTACT ME</h2>
+                <p class="lead">Conéctemos y creemos algo genial</p>
     <footer class="bg-dark py-5">
         <div class="container px-4 px-lg-5">
             <div class="small text-center text-white-50">Copyright &copy; 2024 - Abigail Caniucura</div>
@@ -273,6 +424,18 @@
                 </div>
             </div>
         </div>
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h3 class="sub-section-heading mb-4">Encuéntrame en:</h3>
+                    <div class="social-icons-contact d-flex justify-content-center gap-4">
+                        <a href="mailto:abigailcanicura@gmail.com" class="social-link-contact" aria-label="Email" data-bs-toggle="tooltip" title="abigailcanicura@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/tu-usuario" target="_blank" class="social-link-contact" aria-label="GitHub" data-bs-toggle="tooltip" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/tu-usuario" target="_blank" class="social-link-contact" aria-label="Instagram" data-bs-toggle="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="tel:+56982315515" class="social-link-contact" aria-label="Phone" data-bs-toggle="tooltip" title="+56 9 8231 5515"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                </div>
+        </div>
     </div>
 
     <div class="modal fade" id="ecoBattModal" tabindex="-1" aria-labelledby="ecoBattModalLabel" aria-hidden="true">
@@ -308,6 +471,12 @@
                     <p class="mt-4">Analista de Viabilidad para un prototipo de reciclaje avanzado de baterías, enfocándose en principios de Economía Circular. Contribución al diseño del sistema y evaluación de impacto.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-white-50">Copyright &copy; 2024 - Abigail Caniucura</div>
         </div>
     </div>
 
@@ -355,6 +524,119 @@
         </div>
     </div>
 
+    <div class="modal fade" id="cronoDosisModal" tabindex="-1" aria-labelledby="cronoDosisModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md"> 
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="cronoDosisModalLabel">CronoDosis: IoT y Web</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselCronoDosis" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselCronoDosis" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselCronoDosis" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselCronoDosis" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/cronoDosis/prototipo.jpg" class="d-block w-100 carousel-image-fixed" alt="Prototipo">
+                                <div class="carousel-caption">
+                                    <p>Hardware y prototipado del dispensador IoT.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/cronoDosis/equipo.jpg" class="d-block w-100 carousel-image-fixed" alt="Equipo">
+                                <div class="carousel-caption">
+                                    <p>Liderando la sesión de planificación y desarrollo con el equipo.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/cronoDosis/investigacion.jpg" class="d-block w-100 carousel-image-fixed" alt="Investigación">
+                                <div class="carousel-caption">
+                                    <p>Fase de investigación y diseño de la interfaz web.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCronoDosis" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCronoDosis" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ecoBattModal" tabindex="-1" aria-labelledby="ecoBattModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md"> 
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="ecoBattModalLabel">EcoBatt (Prototipo)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselEcoBatt" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselEcoBatt" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselEcoBatt" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/ecoBatt/modelo.jpg" class="d-block w-100 carousel-image-fixed" alt="Modelo EcoBatt">
+                                <div class="carousel-caption">
+                                    <p>Diseño y análisis del modelo de negocio de economía circular.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/ecoBatt/plano_ecobatt.png" class="d-block w-100 carousel-image-fixed" alt="Plano EcoBatt">
+                                <div class="carousel-caption">
+                                    <p>Planificación técnica y diagrama de flujo del sistema de reciclaje.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselEcoBatt" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselEcoBatt" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="humanDogModal" tabindex="-1" aria-labelledby="humanDogModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm"> 
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="humanDogModalLabel">Human & Dog Health (Prototipo)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselHumanDog" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselHumanDog" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselHumanDog" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselHumanDog" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselHumanDog" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/human&dog_health/mapa.png" class="d-block carousel-image-small-vertical mx-auto" alt="Mapa">
+                                <div class="carousel-caption">
+                                    <p>Interfaz de mapa para geolocalización de servicios.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
