@@ -1,27 +1,61 @@
-
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Efecto de scroll para la barra de navegación (añade sombra)
+    // 1. Efecto de scroll para la barra de navegación (añade sombra)
     const mainNav = document.querySelector('#mainNav');
-    
     if (mainNav) {
-        // Función para manejar el scroll
         const handleScroll = () => {
-            if (window.scrollY > 10) { // Si hay scroll (más de 10px), añade la clase
+            if (window.scrollY > 10) { 
                 mainNav.classList.add('navbar-scrolled');
-            } else { // Si está al inicio, quita la clase
+            } else { 
                 mainNav.classList.remove('navbar-scrolled');
             }
         };
-
-        // Ejecuta la función una vez al cargar la página
-        handleScroll();
-        
-        // Añade el event listener al hacer scroll
-        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Ejecuta al cargar
+        window.addEventListener('scroll', handleScroll); // Ejecuta al hacer scroll
     }
 
-    // El comportamiento de desplazamiento suave lo maneja el CSS: html { scroll-behavior: smooth; }
-    // Bootstrap se encarga de la funcionalidad del menú colapsable (navbar-toggler).
+    // 2. Scroll suave para los enlaces de ancla (navbar y otros)
+    // Selecciona todos los enlaces que empiezan con '#'
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Previene el salto brusco
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                let headerHeight = 0;
+                if (mainNav) {
+                    headerHeight = mainNav.offsetHeight; // Obtiene la altura del navbar
+                }
+                
+                const targetPosition = targetElement.offsetTop - headerHeight; // Calcula la posición - altura del navbar
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 3. Cierra el menú móvil de Bootstrap al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const menuToggle = document.getElementById('navbarResponsive');
+    // Asegura que el elemento colapsable esté inicializado por Bootstrap
+    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false}); 
+
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            // Solo cierra si el menú está visible (en modo móvil)
+            if (menuToggle.classList.contains('show')) { 
+                bsCollapse.hide(); // Ciérralo
+            }
+        });
+    });
+    
+    // 4. Activa los tooltips de Bootstrap (para los iconos de contacto)
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 });
